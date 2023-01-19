@@ -11,15 +11,18 @@ class GameOfLife:
             self.grid_width = len(self.grid[0])
             self.refresh_rate = seed['refresh_rate']
 
-    def print_grid(self):
+    def print_grid(self, step):
         os.system('clear')
         for row in self.grid:
             print(' '.join(row))
+        print(f'Step: {step}')
 
     def run(self):
+        step = 0
         while True:
-            self.print_grid()
+            self.print_grid(step)
             self.update_grid()
+            step += 1
             time.sleep(self.refresh_rate)
 
     def update_grid(self):
