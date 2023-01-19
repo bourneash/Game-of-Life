@@ -51,5 +51,5 @@ class GameOfLife:
 
 
 if __name__ == '__main__':
-    game = GameOfLife('seed.yaml')
+    game = GameOfLife(os.path.dirname(__file__) + '/seed.yaml')
     game.run()
